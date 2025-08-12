@@ -1,253 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CYBER-FEEDOM - Official</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-<style>
-    html { scroll-behavior: smooth; }
-    body {
-        font-family: 'Inter', sans-serif;
-        color: #e5e5e5;
-        position: relative;
-        overflow-x: hidden;
-        background-color: #000;
-    }
-
-    /* 🔹 BACKGROUND IMAGE + ANIMATION */
-    body::before {
-        content: '';
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('https://files.catbox.moe/z5710u.jpg') center/cover no-repeat;
-        z-index: -2;
-        animation: bgZoomPan 25s ease-in-out infinite alternate;
-        filter: brightness(0.4) saturate(1.2);
-    }
-
-    /* Gradient overlay above image */
-    body::after {
-        content: '';
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%;
-        height: 100%;
-        background:
-            radial-gradient(circle at 15% 25%, rgba(124, 58, 237, 0.25), transparent 40%),
-            radial-gradient(circle at 85% 75%, rgba(59, 130, 246, 0.25), transparent 40%);
-        animation: moveGradient 15s ease-in-out infinite;
-        z-index: -1;
-    }
-
-    @keyframes bgZoomPan {
-        0% { transform: scale(1) translate(0, 0); }
-        50% { transform: scale(1.08) translate(-2%, -2%); }
-        100% { transform: scale(1.12) translate(2%, 2%); }
-    }
-
-    @keyframes moveGradient {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-
-    .content-wrapper { position: relative; z-index: 2; }
-
-    .container-box {
-        background-color: rgba(17, 17, 17, 0.7);
-        backdrop-filter: blur(12px);
-        border-radius: 1.5rem;
-        padding: 2.5rem;
-        max-width: 500px;
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
-        animation: floatBox 4s ease-in-out infinite;
-        position: relative;
-    }
-    .container-box::before {
-        content: '';
-        position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px;
-        background: linear-gradient(45deg, #7c3aed, #3b82f6, #7c3aed);
-        background-size: 400% 400%;
-        z-index: -1;
-        animation: borderAnimation 6s linear infinite;
-        border-radius: 1.5rem;
-    }
-
-    @keyframes borderAnimation {
-        0% { background-position: 0% 50%; }
-        100% { background-position: 400% 50%; }
-    }
-    @keyframes floatBox {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-8px); }
-    }
-
-    #pairCodeSection {
-        transition: all 0.6s ease;
-        max-height: 0;
-        opacity: 0;
-        overflow: hidden;
-        transform: translateY(20px);
-    }
-    #pairCodeSection.visible {
-        max-height: 500px;
-        opacity: 1;
-        margin-top: 1.5rem;
-        transform: translateY(0);
-    }
-    .progress-bar {
-        height: 6px;
-        background: linear-gradient(90deg, #7c3aed, #3b82f6);
-        border-radius: 3px;
-        box-shadow: 0 0 10px rgba(124, 58, 237, 0.5);
-    }
-    .input-field {
-        transition: all 0.3s ease;
-    }
-    .input-field:focus {
-        transform: scale(1.02);
-        box-shadow: 0 0 15px rgba(124, 58, 237, 0.4);
-    }
-    .button-pulse {
-        transition: all 0.3s ease;
-    }
-    .button-pulse:hover {
-        transform: scale(1.08);
-        box-shadow: 0 0 25px rgba(124, 58, 237, 0.8);
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBER-FREEDOM - Official</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #e5e5e5;
+            position: relative;
+            overflow-x: hidden;
+            background-color: #000;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://files.catbox.moe/z5710u.jpg') center/cover no-repeat;
+            z-index: -2;
+            animation: bgZoomPan 25s ease-in-out infinite alternate;
+            filter: brightness(0.4) saturate(1.2);
+        }
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 15% 25%, rgba(124, 58, 237, 0.25), transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(59, 130, 246, 0.25), transparent 40%);
+            animation: moveGradient 15s ease-in-out infinite;
+            z-index: -1;
+        }
+        @keyframes bgZoomPan {
+            0% { transform: scale(1) translate(0, 0); }
+            50% { transform: scale(1.08) translate(-2%, -2%); }
+            100% { transform: scale(1.12) translate(2%, 2%); }
+        }
+        @keyframes moveGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .content-wrapper { position: relative; z-index: 2; }
+        .container-box {
+            background-color: rgba(17, 17, 17, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            max-width: 500px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+            animation: floatBox 4s ease-in-out infinite;
+            position: relative;
+        }
+        .container-box::before {
+            content: '';
+            position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(45deg, #7c3aed, #3b82f6, #7c3aed);
+            background-size: 400% 400%;
+            z-index: -1;
+            animation: borderAnimation 6s linear infinite;
+            border-radius: 1.5rem;
+        }
+        @keyframes borderAnimation {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 400% 50%; }
+        }
+        @keyframes floatBox {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        #pairCodeSection {
+            transition: all 0.6s ease;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transform: translateY(20px);
+        }
+        #pairCodeSection.visible {
+            max-height: 500px;
+            opacity: 1;
+            margin-top: 1.5rem;
+            transform: translateY(0);
+        }
+        .progress-bar {
+            height: 6px;
+            background: linear-gradient(90deg, #7c3aed, #3b82f6);
+            border-radius: 3px;
+            box-shadow: 0 0 10px rgba(124, 58, 237, 0.5);
+        }
+        .input-field {
+            transition: all 0.3s ease;
+        }
+        .input-field:focus {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(124, 58, 237, 0.4);
+        }
+        .button-pulse {
+            transition: all 0.3s ease;
+        }
+        .button-pulse:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 25px rgba(124, 58, 237, 0.8);
+        }
+    </style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
-
-<div class="content-wrapper flex flex-col min-h-screen w-full">
-    <!-- Header -->
-    <header class="sticky top-0 bg-black bg-opacity-30 backdrop-blur-md z-30">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="text-2xl font-bold tracking-tighter">CYBER-FEEDOM</a>
-            <button id="theme-toggle" class="text-white focus:outline-none">🌙</button>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="flex-grow flex items-center justify-center p-4">
-        <div class="container-box">
-            <div class="content text-center">
-                <h1 class="text-3xl font-bold tracking-tighter mb-2">CYBER-FEEDOM</h1>
-                <p class="text-neutral-400 mb-6">Enter your number to get your CYBER-FEEDOM code.</p>
-
-                <div class="space-y-4">
-                    <input type="tel" id="phoneNumber" placeholder="Enter number with country code" class="input-field w-full bg-neutral-800 border border-neutral-700 rounded-lg py-3 px-4 text-white placeholder-neutral-500 focus:outline-none text-center">
-                    <button id="getPairCodeBtn" class="button-pulse w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-8 rounded-lg">
-                        CYBER-FEEDOM
-                    </button>
-                </div>
-
-                <div id="pairCodeSection">
-                    <div class="bg-neutral-900/50 border border-dashed border-neutral-700 rounded-lg p-4 mt-4">
-                        <p class="text-neutral-400 mb-3 text-sm" id="statusMessage">Your CYBER-FREEDOM Code (expires in <span id="timer">60</span>s):</p>
-                        <div class="flex items-center justify-between bg-neutral-800 rounded-md p-3 gap-4">
-                            <code id="pairCodeDisplay" class="text-lg font-mono text-green-400 tracking-widest"></code>
-                            <button id="copyBtn" class="bg-neutral-700 hover:bg-neutral-600 rounded p-2">📋</button>
-                        </div>
-                        <div class="mt-4">
-                            <div id="progressBar" class="progress-bar"></div>
+    <div class="content-wrapper flex flex-col min-h-screen w-full">
+        <header class="sticky top-0 bg-black bg-opacity-30 backdrop-blur-md z-30">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="/" class="text-2xl font-bold tracking-tighter">CYBER-FREEDOM</a>
+                <button id="theme-toggle" class="text-white focus:outline-none">🌙</button>
+            </div>
+        </header>
+        <main class="flex-grow flex items-center justify-center p-4">
+            <div class="container-box">
+                <div class="content text-center">
+                    <h1 class="text-3xl font-bold tracking-tighter mb-2">CYBER-FREEDOM</h1>
+                    <p class="text-neutral-400 mb-6">Enter your number to get your CYBER-FREEDOM code.</p>
+                    <div class="space-y-4">
+                        <input type="tel" id="phoneNumber" placeholder="Enter number with country code (e.g., +1234567890)" class="input-field w-full bg-neutral-800 border border-neutral-700 rounded-lg py-3 px-4 text-white placeholder-neutral-500 focus:outline-none text-center">
+                        <button id="getPairCodeBtn" class="button-pulse w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-8 rounded-lg">
+                            CYBER-FREEDOM
+                        </button>
+                    </div>
+                    <div id="pairCodeSection">
+                        <div class="bg-neutral-900/50 border border-dashed border-neutral-700 rounded-lg p-4 mt-4">
+                            <p class="text-neutral-400 mb-3 text-sm" id="statusMessage">Your CYBER-FREEDOM Code (expires in <span id="timer">60</span>s):</p>
+                            <div class="flex items-center justify-between bg-neutral-800 rounded-md p-3 gap-4">
+                                <code id="pairCodeDisplay" class="text-lg font-mono text-green-400 tracking-widest"></code>
+                                <button id="copyBtn" class="bg-neutral-700 hover:bg-neutral-600 rounded p-2">📋</button>
+                            </div>
+                            <div class="mt-4">
+                                <div id="progressBar" class="progress-bar"></div>
+                            </div>
                         </div>
                     </div>
+                    <textarea id="copyHelper" class="opacity-0 absolute pointer-events-none"></textarea>
                 </div>
-                <textarea id="copyHelper" class="opacity-0 absolute pointer-events-none"></textarea>
             </div>
-        </div>
-    </main>
+        </main>
+        <footer class="text-center py-6 border-t border-neutral-800 border-opacity-50 text-neutral-500 text-sm">
+            <p>&copy; 2025 CYBER-FREEDOM.</p>
+        </footer>
+    </div>
+    <script>
+        const phoneNumberInput = document.getElementById('phoneNumber');
+        const getPairCodeBtn = document.getElementById('getPairCodeBtn');
+        const pairCodeSection = document.getElementById('pairCodeSection');
+        const pairCodeDisplay = document.getElementById('pairCodeDisplay');
+        const copyBtn = document.getElementById('copyBtn');
+        const copyHelper = document.getElementById('copyHelper');
+        const statusMessage = document.getElementById('statusMessage');
+        const progressBar = document.getElementById('progressBar');
+        let countdown, timerInterval;
 
-    <footer class="text-center py-6 border-t border-neutral-800 border-opacity-50 text-neutral-500 text-sm">
-        <p>&copy; 2025 CYBER-FEEDOM.</p>
-    </footer>
-</div>
+        // Phone number input validation
+        phoneNumberInput.addEventListener('input', e => {
+            e.target.value = e.target.value.replace(/[^0-9+]/g, '');
+        });
 
-<script>
-    const phoneNumberInput = document.getElementById('phoneNumber');
-    const getPairCodeBtn = document.getElementById('getPairCodeBtn');
-    const pairCodeSection = document.getElementById('pairCodeSection');
-    const pairCodeDisplay = document.getElementById('pairCodeDisplay');
-    const copyBtn = document.getElementById('copyBtn');
-    const copyHelper = document.getElementById('copyHelper');
-    const statusMessage = document.getElementById('statusMessage');
-    const progressBar = document.getElementById('progressBar');
-    let countdown, timerInterval;
-
-    phoneNumberInput.addEventListener('input', e => e.target.value = e.target.value.replace(/[^0-9+]/g, ''));
-
-    getPairCodeBtn.addEventListener('click', async () => {
-        const phoneNumber = phoneNumberInput.value.trim();
-        if (!phoneNumber) {
-            statusMessage.textContent = 'Please enter a valid phone number.';
-            statusMessage.className = 'text-amber-500 mb-3 text-sm';
-            pairCodeDisplay.textContent = '';
-            pairCodeSection.classList.add('visible');
-            return;
-        }
-        getPairCodeBtn.disabled = true;
-        getPairCodeBtn.textContent = 'Generating...';
-        if (timerInterval) clearInterval(timerInterval);
-        pairCodeSection.classList.remove('visible');
-        statusMessage.className = 'text-neutral-400 mb-3 text-sm';
-        try {
-            const response = await fetch(`/codes?num=${phoneNumber}`);
-            const data = await response.json();
-            if (!response.ok) throw new Error(data.error || 'Failed to fetch code.');
-            const pairCode = data.code;
-            if (!pairCode) throw new Error('Invalid code from server.');
-            pairCodeDisplay.textContent = pairCode;
-            setTimeout(() => {
-                statusMessage.innerHTML = `Your CYBER-FREEDOM Code (expires in <span id="timer">60</span>s):`;
+        // Generate pair code
+        getPairCodeBtn.addEventListener('click', async () => {
+            const phoneNumber = phoneNumberInput.value.trim();
+            if (!/^\+\d{10,15}$/.test(phoneNumber)) {
+                statusMessage.textContent = 'Please enter a valid phone number (e.g., +1234567890).';
+                statusMessage.className = 'text-amber-500 mb-3 text-sm';
+                pairCodeDisplay.textContent = '';
                 pairCodeSection.classList.add('visible');
-                copyBtn.disabled = false;
-                startTimer();
-            }, 100);
-        } catch (error) {
-            statusMessage.textContent = error.message;
-            statusMessage.className = 'text-amber-500 mb-3 text-sm';
-            pairCodeDisplay.textContent = '------------';
-            pairCodeSection.classList.add('visible');
-            getPairCodeBtn.disabled = false;
-        } finally {
-            getPairCodeBtn.textContent = 'CYBER-FEEDOM';
-        }
-    });
+                return;
+            }
 
-    function startTimer() {
-        countdown = 60;
-        const timerElement = document.getElementById('timer');
-        timerElement.textContent = countdown;
-        progressBar.style.transition = 'none';
-        progressBar.style.width = '100%';
-        void progressBar.offsetWidth;
-        progressBar.style.transition = 'width 1s linear';
-        timerInterval = setInterval(() => {
-            countdown--;
-            if (timerElement) timerElement.textContent = countdown;
-            progressBar.style.width = `${(countdown / 60) * 100}%`;
-            if (countdown <= 0) {
-                clearInterval(timerInterval);
-                statusMessage.textContent = 'CYBER-FREEDOM code expired. Please try again.';
+            getPairCodeBtn.disabled = true;
+            getPairCodeBtn.textContent = 'Generating...';
+            if (timerInterval) clearInterval(timerInterval);
+            pairCodeSection.classList.remove('visible');
+            statusMessage.className = 'text-neutral-400 mb-3 text-sm';
+
+            try {
+                const response = await fetch(`/codes?num=${encodeURIComponent(phoneNumber)}`);
+                const data = await response.json();
+                if (!response.ok) throw new Error(data.error || 'Failed to fetch code.');
+                const pairCode = data.code;
+                if (!pairCode) throw new Error('Invalid code from server.');
+
+                pairCodeDisplay.textContent = pairCode;
+                setTimeout(() => {
+                    statusMessage.innerHTML = `Your CYBER-FREEDOM Code (expires in <span id="timer">60</span>s):`;
+                    pairCodeSection.classList.add('visible');
+                    copyBtn.disabled = false;
+                    startTimer();
+                }, 100);
+            } catch (error) {
+                statusMessage.textContent = error.message || 'An error occurred. Please try again.';
                 statusMessage.className = 'text-amber-500 mb-3 text-sm';
                 pairCodeDisplay.textContent = '------------';
-                copyBtn.disabled = true;
+                pairCodeSection.classList.add('visible');
+            } finally {
                 getPairCodeBtn.disabled = false;
+                getPairCodeBtn.textContent = 'CYBER-FREEDOM';
             }
-        }, 1000);
-    }
-    copyBtn.addEventListener('click', () => {
-        if(!pairCodeDisplay.textContent || copyBtn.disabled) return;
-        copyHelper.value = pairCodeDisplay.textContent;
-        copyHelper.select();
-        document.execCommand('copy');
-        copyBtn.textContent = '✅';
-    });
-</script>
+        });
+
+        // Start countdown timer
+        function startTimer() {
+            countdown = 60;
+            const timerElement = document.getElementById('timer');
+            timerElement.textContent = countdown;
+            progressBar.style.transition = 'none';
+            progressBar.style.width = '100%';
+            void progressBar.offsetWidth;
+            progressBar.style.transition = 'width 1s linear';
+            timerInterval = setInterval(() => {
+                countdown--;
+                if (timerElement) timerElement.textContent = countdown;
+                progressBar.style.width = `${(countdown / 60) * 100}%`;
+                if (countdown <= 0) {
+                    clearInterval(timerInterval);
+                    statusMessage.textContent = 'CYBER-FREEDOM code expired. Please try again.';
+                    statusMessage.className = 'text-amber-500 mb-3 text-sm';
+                    pairCodeDisplay.textContent = '------------';
+                    copyBtn.disabled = true;
+                    getPairCodeBtn.disabled = false;
+                }
+            }, 1000);
+        }
+
+        // Copy pair code to clipboard
+        copyBtn.addEventListener('click', () => {
+            if (!pairCodeDisplay.textContent || copyBtn.disabled) return;
+            copyHelper.value = pairCodeDisplay.textContent;
+            copyHelper.select();
+            document.execCommand('copy');
+            copyBtn.textContent = '✅';
+            setTimeout(() => {
+                copyBtn.textContent = '📋';
+            }, 2000);
+        });
+    </script>
 </body>
 </html>
